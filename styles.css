@@ -8,6 +8,7 @@ body {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    page-break-inside: avoid;
 }
 
 .top-right {
@@ -41,6 +42,7 @@ button {
     font-size: 16px;
     cursor: pointer;
     border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .qr-code-container {
@@ -67,7 +69,13 @@ button {
 .underline {
     text-decoration: underline;
 }
-
+h3{
+    font-size: 12pt;
+}
+.align{
+    justify-content: left;
+    
+}
 /* Hide elements with the no-print class when printing */
 /* @media print {
     .no-print {
@@ -93,6 +101,50 @@ button {
         width: 100%;
     }
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* body {
     font-family: Arial, sans-serif;

@@ -6,27 +6,34 @@ function generateCodes() {
 
     // Collect the dynamic data
     const data = {
-        dateOfIssuance: document.getElementById("dateOfIssuance").value,
-        validity: document.getElementById("validity").value,
-        currentYear: document.getElementById("currentYear").value,
+        universityName: "University of Peshawar",
         instituteName: document.getElementById("instituteName").value,
         amount: document.getElementById("amount").value,
+        bankName: document.getElementById("bankName").value,
         accountNo: document.getElementById("accountNo").value,
         receiptNo1: document.getElementById("receiptNo1").value,
         receiptNo2: document.getElementById("receiptNo2").value,
-        date1: document.getElementById("date1").value,
-        date2: document.getElementById("date2").value,
         discipline: document.getElementById("discipline").value,
-        bankName: document.getElementById("bankName").value
     };
 
-    const jsonString = JSON.stringify(data);
+    // Format the data as plain text
+    const formattedData = `
+        University of Peshawar
+        Institute Name: ${data.instituteName}
+        Amount: ${data.amount}
+        Bank Name: ${data.bankName}
+        Account No: ${data.accountNo}
+        Receipt No 1: ${data.receiptNo1}
+        Receipt No 2: ${data.receiptNo2}
+        discipline:${data.discipline}
+    `;
 
     // Generate QR Code
     new QRCode(qrCodeElement, {
-        text: jsonString,
-        width: 128,
-        height: 128
+        text: formattedData,
+        width: 256,  // Increased size for better readability
+        height: 256,
+        correctLevel: QRCode.CorrectLevel.H // High error correction level
     });
 }
 
@@ -84,3 +91,50 @@ function printCodes() {
     printWindow.document.close();
     printWindow.print();
 }
+
+
+
+// function generateCodes() {
+//     const qrCodeElement = document.getElementById("qrCode");
+
+//     // Clear previous QR codes
+//     qrCodeElement.innerHTML = '';
+
+//     // Collect dynamic data
+//     const data = {
+//         instituteName: document.getElementById("instituteName").value,
+//         amount: document.getElementById("amount").value,
+//         bankName: document.getElementById("bankName").value,
+//         accountNo: document.getElementById("accountNo").value,
+//         receiptNo1: document.getElementById("receiptNo1").value,
+//         receiptNo2: document.getElementById("receiptNo2").value,
+//         date1: document.getElementById("date1").value,
+//         date2: document.getElementById("date2").value,
+//         discipline: document.getElementById("discipline").value
+//     };
+
+//     // Format text for QR code (without HTML)
+//     const formattedData = `
+//         University of Peshawar
+//         Institute Name: ${data.instituteName}
+//         Amount: ${data.amount}
+//         Bank Name: ${data.bankName}
+//         Account No: ${data.accountNo}
+//         Receipt No 1: ${data.receiptNo1}
+//         Receipt No 2: ${data.receiptNo2}
+//         Dates: ${data.date1} / ${data.date2}
+//         Discipline: ${data.discipline}
+//     `;
+
+//     // Generate QR code
+//     new QRCode(qrCodeElement, {
+//         text: formattedData,
+//         width: 128,
+//         height: 128,
+//         correctLevel: QRCode.CorrectLevel.H
+//     });
+// }
+
+// function printCodes() {
+//     window.print();
+// }
