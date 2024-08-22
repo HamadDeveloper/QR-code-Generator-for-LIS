@@ -1,0 +1,21 @@
+{
+  "name": "NOC Generator",
+  "short_name": "QR Code",
+  "description": "This app  generates QR codes for NOCs",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+      {
+          "src": "uoplogo.jpeg",
+          "sizes": "192x192",
+          "type": "image/jpeg"
+      },
+      {
+          "src": "uoplogo.jpeg",
+          "sizes": "512x512",
+          "type": "image/jpeg"
+      }
+  ]
+}
