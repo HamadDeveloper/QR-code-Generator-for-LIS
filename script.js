@@ -37,33 +37,37 @@ function generateCodes() {
     });
 }
 
+function formatDate(dateStr) {
+    const [year, month, day] = dateStr.split("-");
+    return `${day}/${month}/${year}`;
+}
 function printCodes() {
     const data = {
-        dateOfIssuance: document.getElementById("dateOfIssuance").value,
-        validity: document.getElementById("validity").value,
+        dateOfIssuance: formatDate(document.getElementById("dateOfIssuance").value),
+        validity: formatDate(document.getElementById("validity").value),
         currentYear: document.getElementById("currentYear").value,
         instituteName: document.getElementById("instituteName").value,
         amount: document.getElementById("amount").value,
         accountNo: document.getElementById("accountNo").value,
         receiptNo1: document.getElementById("receiptNo1").value,
         receiptNo2: document.getElementById("receiptNo2").value,
-        date1: document.getElementById("date1").value,
-        date2: document.getElementById("date2").value,
+        date1: formatDate(document.getElementById("date1").value),
+        date2: formatDate(document.getElementById("date2").value),
         discipline: document.getElementById("discipline").value,
         bankName: document.getElementById("bankName").value
     };
 
     const printContent = `
         <div class="top-right">
-            <label>Date of Issuance: ${data.dateOfIssuance}</label><br>
-            <label>Valid Up to: ${data.validity}</label>
+            <label>Date of Issuance: <strong>${data.dateOfIssuance}</strong></label><br>
+            <label>Valid Up to: <strong>${data.validity}</strong></label>
         </div>
         <div class="center-text">
-            <h2>THE REGISTRAR</h2>
-            <h2>UNIVERSITY OF PESHAWAR</h2>
+            <h4>THE REGISTRAR</h4>
+            <h4>UNIVERSITY OF PESHAWAR</h4>
             <img src="uoplogo.jpeg" alt="University Logo" class="logo">
             <br><br>
-            <h2 class="underline">RENEWAL OF AFFILIATION/N.O.C.</h2>
+            <h3 class="underline">RENEWAL OF AFFILIATION/N.O.C.</h3>
             <br>
             <label> <strong>For the Year  ${data.currentYear} </strong></label>
             <br><br>
@@ -73,13 +77,14 @@ function printCodes() {
             <br><br><br><br>
             <p class="right-text"><strong>Assistant Registrar (Affiliation)</strong></p>
             <br><br>
+            ${document.getElementById('qrCode').outerHTML}
             <p class="left-text"><strong>Copy for information to:</strong></p>
             <div class="align">
               <p>1. The Controller of Examinations, University of Peshawar.</p>
               <p>2. The Director Admissions, University of Peshawar.</p>
             </div>
             <br><br>
-            ${document.getElementById('qrCode').outerHTML}
+            
         </div>`;
 
     const printWindow = window.open('', '', 'height=400,width=600');
@@ -92,49 +97,3 @@ function printCodes() {
     printWindow.print();
 }
 
-
-
-// function generateCodes() {
-//     const qrCodeElement = document.getElementById("qrCode");
-
-//     // Clear previous QR codes
-//     qrCodeElement.innerHTML = '';
-
-//     // Collect dynamic data
-//     const data = {
-//         instituteName: document.getElementById("instituteName").value,
-//         amount: document.getElementById("amount").value,
-//         bankName: document.getElementById("bankName").value,
-//         accountNo: document.getElementById("accountNo").value,
-//         receiptNo1: document.getElementById("receiptNo1").value,
-//         receiptNo2: document.getElementById("receiptNo2").value,
-//         date1: document.getElementById("date1").value,
-//         date2: document.getElementById("date2").value,
-//         discipline: document.getElementById("discipline").value
-//     };
-
-//     // Format text for QR code (without HTML)
-//     const formattedData = `
-//         University of Peshawar
-//         Institute Name: ${data.instituteName}
-//         Amount: ${data.amount}
-//         Bank Name: ${data.bankName}
-//         Account No: ${data.accountNo}
-//         Receipt No 1: ${data.receiptNo1}
-//         Receipt No 2: ${data.receiptNo2}
-//         Dates: ${data.date1} / ${data.date2}
-//         Discipline: ${data.discipline}
-//     `;
-
-//     // Generate QR code
-//     new QRCode(qrCodeElement, {
-//         text: formattedData,
-//         width: 128,
-//         height: 128,
-//         correctLevel: QRCode.CorrectLevel.H
-//     });
-// }
-
-// function printCodes() {
-//     window.print();
-// }

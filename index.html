@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,8 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.5/JsBarcode.all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script defer src="script.js"></script>
-     <link rel="stylesheet" href="content.html">
- </head>
+</head>
 
 <body>
     <div class="container">
@@ -21,46 +20,42 @@
             <label for="validity">Valid Up to: </label>
             <input type="date" id="validity" name="validity">
         </div>
+
         <div class="center-text">
-            <h3>THE REGISTRAR</h3>
-            <h3>UNIVERSITY OF PESHAWAR</h3>
+            <h4>THE REGISTRAR</h4>
+            <h4>UNIVERSITY OF PESHAWAR</h4>
             <img src="uoplogo.jpeg" alt="University Logo" class="logo">
-             <br> <!--<br> -->
+            <br>
             <h3 class="underline">RENEWAL OF AFFILIATION/N.O.C.</h3>
-            <!-- <br> -->
             <label for="currentYear">For the Year </label>
-            <input type="text" id="currentYear" name="currentYear" placeholder="Enter the Year ">
-             <!-- <br> <br> -->
+            <input type="text" id="currentYear" name="currentYear" placeholder="Enter the Year">
             <p>Certified that the <input type="text" id="instituteName" name="instituteName"
-                    placeholder="Enter the Institute Name"> has remitted Rs. <input type="text" id="amount"
-                    name="amount" placeholder="Enter Amount"> in <input type="text" id="bankName" name="bankName"
-                    placeholder="Enter Bank Name"> Account No. <input type="text" id="accountNo" name="accountNo"
-                    placeholder="Enter Account No"> via receipt No. <input type="text" id="receiptNo1" name="receiptNo1"
-                    placeholder="enter receipt no"> and <input type="text" id="receiptNo2" name="receiptNo2"
-                    placeholder="enter receipt no"> dated <input type="date" id="date1" name="date1"> and <input
-                    type="date" id="date2" name="date2"> on account of annual affiliation retaining fee for the
-                discipline of <input type="text" id="discipline" name="discipline" placeholder="Dept,Sec,Seats">.</p>
-             <br>  <!-- <br> -->
+                    placeholder="Enter the Institute Name">
+                has remitted Rs. <input type="text" id="amount" name="amount" placeholder="Enter Amount"> in <input
+                    type="text" id="bankName" name="bankName" placeholder="Enter Bank Name"> Account No. <input
+                    type="text" id="accountNo" name="accountNo" placeholder="Enter Account No">
+                via receipt No. <input type="text" id="receiptNo1" name="receiptNo1" placeholder="enter receipt no"> and
+                <input type="text" id="receiptNo2" name="receiptNo2" placeholder="enter receipt no"> dated <input
+                    type="date" id="date1" name="date1"> and <input type="date" id="date2" name="date2">
+                on account of annual affiliation retaining fee for the discipline of <input type="text" id="discipline"
+                    name="discipline" placeholder="Dept, Sec, Seats">.
+            </p>
             <p><strong>Note: NOC is not valid for the purpose of Admissions/Examinations.</strong></p>
-             <br> <!--<br><br><br> -->
-            <p class="right-text"><strong>Assistant Registrar (Affiliation)</strong></p>
-             <br> <!--<br> -->
+            <p class="right-text">Assistant Registrar (Affiliation)</p>
             <p class="left-text"><strong>Copy for information to:</strong></p>
             <div class="align">
-                <ol>
-                <li>The Controller of Examinations, University of Peshawar.</li>
-                <li>The Director Admissions, University of Peshawar.</li>
-               </ol>
+                <p>1. The Controller of Examinations, University of Peshawar.</p>
+                <p>2. The Director Admissions, University of Peshawar.</p>
             </div>
-             <br> <!--<br> -->
             <div id="qrCode" class="qr-code-container"></div>
-            <br>
             <div class="buttons no-print">
-                <button onclick="generateCodes()">Generate QR Code</button>
-                <button onclick="printCodes()">Print</button>
+                <div class="button-self">
+                    <button onclick="generateCodes()">Generate QR Code</button>
+                    <button onclick="printCodes()">Print</button>
+                </div>
             </div>
         </div>
     </div>
 </body>
 
-</html> 
+</html>
